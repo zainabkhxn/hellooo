@@ -5,14 +5,6 @@ from google.generativeai.types import HarmCategory, HarmBlockThreshold
 # API configuration
 genai.configure(api_key="AIzaSyBBwgdrP-e3HyI4bG_KFN1a_c0JzdfiWH4")
 
-# Generation configuration
-generation_config = {
-    "temperature": 0,
-    "top_p": 0.95,
-    "top_k": 64,
-    "max_output_tokens": 200,
-    "response_mime_type": "text/plain",
-}
 
 # Create the model
 model = genai.GenerativeModel(
