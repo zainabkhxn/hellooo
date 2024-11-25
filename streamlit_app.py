@@ -4,6 +4,7 @@ from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
 # API configuration
 genai.configure(api_key="AIzaSyBBwgdrP-e3HyI4bG_KFN1a_c0JzdfiWH4")
+
 # Generation configuration
 generation_config = {
     "temperature": 0,
@@ -12,8 +13,6 @@ generation_config = {
     "max_output_tokens": 200,
     "response_mime_type": "text/plain",
 }
-
-
 
 # Create the model
 model = genai.GenerativeModel(
@@ -43,7 +42,7 @@ st.title("Welcome to gemini vanquisher")
 with st.sidebar:
     st.header("Gemini Vanquisher", divider="rainbow")
     st.write("Welcome to the Gemini Vanquisher AI chat interface!")
-    st.write("Ask me anything, about the health related quires ")
+    st.write("Ask me anything, and I'll provide responses based on your queries.")
 
 # Initialize session state for storing conversation messages
 if "messages" not in st.session_state:
@@ -68,4 +67,4 @@ if prompt:
 
     with st.chat_message("assistant"):
         st.markdown(response)
-        st.session_state.messages.append({"role":"assistant", "content":response})
+        st.session_state.messages.append({"role": "assistant", "content": response})
